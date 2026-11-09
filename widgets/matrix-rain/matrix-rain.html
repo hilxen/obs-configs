@@ -33,12 +33,12 @@ resize();
 // Half-width katakana (classic Matrix look) plus digits/letters for variety.
 const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-// 3x the original 9px -- the OBS source's native width/height are also
-// set to 3x (600x1800 instead of 200x600), with the scene's scale.x/y
-// divided by 3 to compensate, so the on-screen size and column count stay
+// 6x the original 9px -- the OBS source's native width/height are also
+// set to 6x (1200x3600 instead of 200x600), with the scene's scale.x/y
+// divided by 6 to compensate, so the on-screen size and column count stay
 // identical but with far more real source detail per glyph before OBS's
 // (now much gentler) scale-down.
-const FONT_SIZE = 27;
+const FONT_SIZE = 54;
 const SPACING = FONT_SIZE * 1.2; // 20% more room between symbols than the glyph size itself
 const TRAIL_LENGTH = 16;
 let columns = 0;
@@ -56,7 +56,7 @@ function draw(){
   ctx.fillStyle = 'rgba(0,0,0,0.05)';
   ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
-  ctx.font = 'bold ' + FONT_SIZE + 'px monospace';
+  ctx.font = 'bold ' + FONT_SIZE + 'px Menlo, Consolas, "DejaVu Sans Mono", monospace';
   for (let i = 0; i < columns; i++){
     const x = i * SPACING;
     const headY = drops[i] * SPACING;
