@@ -23,9 +23,18 @@ canvas{display:block;}
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 
+// Render at higher internal resolution than the displayed size so glyphs
+// are crisply anti-aliased before OBS's own scene scale (2.5x) stretches
+// this source -- without it, small text has too few source pixels per
+// stroke and comes out as blurry/blocky green smears instead of letters.
+const SUPERSAMPLE = 3;
+
 function resize(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.style.width = window.innerWidth + 'px';
+  canvas.style.height = window.innerHeight + 'px';
+  canvas.width = Math.floor(window.innerWidth * SUPERSAMPLE);
+  canvas.height = Math.floor(window.innerHeight * SUPERSAMPLE);
+  ctx.setTransform(SUPERSAMPLE, 0, 0, SUPERSAMPLE, 0, 0);
 }
 window.addEventListener('resize', resize);
 resize();
@@ -40,7 +49,7 @@ let columns = 0;
 let drops = [];
 
 function setupDrops(){
-  columns = Math.ceil(canvas.width / SPACING);
+  columns = Math.ceil(window.innerWidth / SPACING);
   drops = new Array(columns).fill(0).map(() => Math.floor(Math.random() * -40));
 }
 setupDrops();
@@ -49,9 +58,9 @@ window.addEventListener('resize', setupDrops);
 function draw(){
   // translucent black over the previous frame -> fading trail effect
   ctx.fillStyle = 'rgba(0,0,0,0.05)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
-  ctx.font = FONT_SIZE + 'px monospace';
+  ctx.font = 'bold ' + FONT_SIZE + 'px monospace';
   for (let i = 0; i < columns; i++){
     const x = i * SPACING;
     const headY = drops[i] * SPACING;
@@ -70,7 +79,7 @@ function draw(){
       ctx.fillText(char, x, y);
     }
 
-    if (headY > canvas.height + TRAIL_LENGTH * SPACING && Math.random() > 0.95){
+    if (headY > window.innerHeight + TRAIL_LENGTH * SPACING && Math.random() > 0.95){
       drops[i] = 0;
     }
     drops[i]++;
