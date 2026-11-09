@@ -30,8 +30,12 @@ function resize(){
 window.addEventListener('resize', resize);
 resize();
 
-// Half-width katakana (classic Matrix look) plus digits/letters for variety.
-const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// Katakana (classic Matrix look) + digits/Latin + Cyrillic -- but only the
+// Cyrillic letters with a shape genuinely distinct from any Latin letter
+// (excludes homoglyphs like А/В/Е/К/М/Н/О/Р/С/Т/У/Х, which are visually
+// identical or near-identical to Latin letters already in the set and
+// would add no real variety).
+const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZБГДЖЗИЙЛПФЦЧШЩЪЫЬЭЮЯ';
 
 // Design size 9px x 6x supersampling = 54 native px.
 const FONT_SIZE = 54;
