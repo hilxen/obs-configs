@@ -1,0 +1,7 @@
+{
+    "type": "rtmp_custom",
+    "settings": {
+        "server": "rtmp://rtmp3.p4i1.com:1936/live",
+        "key": "REDACTED"
+    }
+}

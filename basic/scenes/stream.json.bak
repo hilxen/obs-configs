@@ -1,0 +1,425 @@
+{
+    "name": "Multistream 01 2",
+    "DesktopAudioDevice1": {
+        "prev_ver": 553648129,
+        "name": "Desktop Audio",
+        "uuid": "9f822deb-3d8d-4b92-a0b7-0d5b8fce0be5",
+        "id": "coreaudio_output_capture",
+        "versioned_id": "coreaudio_output_capture",
+        "settings": {
+            "device_id": "default"
+        },
+        "mixers": 255,
+        "sync": 0,
+        "flags": 0,
+        "volume": 0.6745906472206116,
+        "balance": 0.5,
+        "enabled": true,
+        "muted": false,
+        "push-to-mute": false,
+        "push-to-mute-delay": 0,
+        "push-to-talk": false,
+        "push-to-talk-delay": 0,
+        "hotkeys": {
+            "libobs.mute": [],
+            "libobs.unmute": [],
+            "libobs.monitor-on": [],
+            "libobs.monitor-off": [],
+            "libobs.push-to-mute": [],
+            "libobs.push-to-talk": []
+        },
+        "deinterlace_mode": 0,
+        "deinterlace_field_order": 0,
+        "monitoring_type": 0,
+        "monitoring_enabled": false,
+        "private_settings": {
+            "mixer_hidden": true
+        }
+    },
+    "AuxAudioDevice1": {
+        "prev_ver": 553648129,
+        "name": "Mic/Aux",
+        "uuid": "5020abc8-bc6c-46e2-b905-61181365e760",
+        "id": "coreaudio_input_capture",
+        "versioned_id": "coreaudio_input_capture",
+        "settings": {
+            "device_id": "BuiltInMicrophoneDevice"
+        },
+        "mixers": 255,
+        "sync": -2000000,
+        "flags": 0,
+        "volume": 0.6447964310646057,
+        "balance": 0.5,
+        "enabled": true,
+        "muted": false,
+        "push-to-mute": false,
+        "push-to-mute-delay": 0,
+        "push-to-talk": false,
+        "push-to-talk-delay": 0,
+        "hotkeys": {
+            "libobs.mute": [],
+            "libobs.unmute": [],
+            "libobs.monitor-on": [],
+            "libobs.monitor-off": [],
+            "libobs.push-to-mute": [],
+            "libobs.push-to-talk": []
+        },
+        "deinterlace_mode": 0,
+        "deinterlace_field_order": 0,
+        "monitoring_type": 0,
+        "monitoring_enabled": false,
+        "private_settings": {
+            "mixer_hidden": false
+        }
+    },
+    "sources": [
+        {
+            "prev_ver": 553648129,
+            "name": "screen",
+            "uuid": "edf0bf15-f960-474c-b1b5-f745c15d177e",
+            "id": "screen_capture",
+            "versioned_id": "screen_capture",
+            "settings": {
+                "display_uuid": "37D8832A-2D66-02CA-B9F7-8F30A301B230",
+                "hide_obs": true
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648129,
+            "name": "Video Capture Device",
+            "uuid": "e9d2b244-bec1-410c-b793-b6651f5d6762",
+            "id": "macos-avcapture",
+            "versioned_id": "macos-avcapture",
+            "settings": {
+                "device_name": "FaceTime HD Camera",
+                "device": "3F45E80A-0176-46F7-B185-BB9E2C0E82E3"
+            },
+            "mixers": 255,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.mute": [],
+                "libobs.unmute": [],
+                "libobs.monitor-on": [],
+                "libobs.monitor-off": [],
+                "libobs.push-to-mute": [],
+                "libobs.push-to-talk": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 553648129,
+            "name": "Stream",
+            "uuid": "7dd958f8-36ac-45cf-a3d2-22cc90628703",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "custom_size": false,
+                "id_counter": 13,
+                "items": [
+                    {
+                        "name": "screen",
+                        "source_uuid": "edf0bf15-f960-474c-b1b5-f745c15d177e",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 10,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 124.5,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.5470008850097656,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 0.48343777656555176,
+                            "y": 0.48343777656555176
+                        },
+                        "scale_rel": {
+                            "x": 0.48343777656555176,
+                            "y": 0.48343777656555176
+                        },
+                        "bounds": {
+                            "x": 1671.0,
+                            "y": 1080.0
+                        },
+                        "bounds_rel": {
+                            "x": 3.0940017700195312,
+                            "y": 2.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Video Capture Device",
+                        "source_uuid": "e9d2b244-bec1-410c-b793-b6651f5d6762",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 3456.0,
+                            "y": 2234.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 12,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 1260.0,
+                            "y": 779.0
+                        },
+                        "pos_rel": {
+                            "x": 0.5559534430503845,
+                            "y": 0.4422560930252075
+                        },
+                        "scale": {
+                            "x": 0.2787320911884308,
+                            "y": 0.27887198328971863
+                        },
+                        "scale_rel": {
+                            "x": 0.5765625238418579,
+                            "y": 0.5768518447875977
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Mic/Aux",
+                        "source_uuid": "5020abc8-bc6c-46e2-b905-61181365e760",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 13,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    }
+                ]
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.10": [],
+                "libobs.hide_scene_item.10": [],
+                "libobs.show_scene_item.12": [],
+                "libobs.hide_scene_item.12": [],
+                "libobs.show_scene_item.13": [],
+                "libobs.hide_scene_item.13": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "monitoring_enabled": false,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+            "private_settings": {}
+        }
+    ],
+    "groups": [],
+    "scene_order": [
+        {
+            "name": "Stream"
+        }
+    ],
+    "current_scene": "Stream",
+    "current_program_scene": "Stream",
+    "canvases": [],
+    "current_transition": "Fade",
+    "transition_duration": 500,
+    "transitions": [],
+    "quick_transitions": [
+        {
+            "name": "Cut",
+            "duration": 300,
+            "hotkeys": [],
+            "id": 1,
+            "fade_to_black": false
+        },
+        {
+            "name": "Fade",
+            "duration": 300,
+            "hotkeys": [],
+            "id": 2,
+            "fade_to_black": false
+        },
+        {
+            "name": "Fade",
+            "duration": 300,
+            "hotkeys": [],
+            "id": 3,
+            "fade_to_black": true
+        }
+    ],
+    "saved_projectors": [],
+    "preview_locked": false,
+    "scaling_enabled": false,
+    "scaling_level": 1,
+    "scaling_off_x": 0.0,
+    "scaling_off_y": 0.0,
+    "virtual-camera": {
+        "type2": 3
+    },
+    "modules": {
+        "auto-scene-switcher": {
+            "interval": 300,
+            "non_matching_scene": "",
+            "switch_if_not_matching": false,
+            "active": false,
+            "switches": []
+        },
+        "output-timer": {
+            "streamTimerHours": 0,
+            "streamTimerMinutes": 0,
+            "streamTimerSeconds": 30,
+            "recordTimerHours": 0,
+            "recordTimerMinutes": 0,
+            "recordTimerSeconds": 30,
+            "autoStartStreamTimer": false,
+            "autoStartRecordTimer": false,
+            "pauseRecordTimer": true
+        },
+        "scripts-tool": []
+    },
+    "resolution": {
+        "x": 1920,
+        "y": 1080
+    },
+    "migration_resolution": {
+        "x": 1920,
+        "y": 1080
+    },
+    "version": 2
+}

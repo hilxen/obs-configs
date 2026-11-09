@@ -1,0 +1,9 @@
+{
+    "type": "rtmp_custom",
+    "settings": {
+        "server": "rtmp://localhost/app/",
+        "use_auth": false,
+        "bwtest": false,
+        "key": "REDACTED"
+    }
+}
