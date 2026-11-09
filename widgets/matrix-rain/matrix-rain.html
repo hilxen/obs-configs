@@ -33,12 +33,9 @@ resize();
 // Half-width katakana (classic Matrix look) plus digits/letters for variety.
 const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-// Design size 14px (up from 9px) x 6x supersampling = 84 native px.
-// The OBS source's native width/height (1200x3600) and scene scale
-// (0.417) stay as before -- only the design font size changes here, so
-// the final on-screen glyph size grows from ~22.5px to ~35px.
-const FONT_SIZE = 84;
-const SPACING = FONT_SIZE * 1.6; // more breathing room between columns
+// Design size 9px x 6x supersampling = 54 native px.
+const FONT_SIZE = 54;
+const SPACING = FONT_SIZE * 1.2; // 20% more room between symbols than the glyph size itself
 const TRAIL_LENGTH = 16;
 let columns = 0;
 let drops = [];
