@@ -30,8 +30,8 @@ function resize(){
 window.addEventListener('resize', resize);
 resize();
 
-// Cyrillic uppercase plus digits.
-const CHARS = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789';
+// Half-width katakana (classic Matrix look) plus digits/letters for variety.
+const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 // 3x the original 9px -- the OBS source's native width/height are also
 // set to 3x (600x1800 instead of 200x600), with the scene's scale.x/y
