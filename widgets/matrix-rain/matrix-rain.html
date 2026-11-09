@@ -33,20 +33,25 @@ resize();
 // Half-width katakana (classic Matrix look) plus digits/letters for variety.
 const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-// 6x the original 9px -- the OBS source's native width/height are also
-// set to 6x (1200x3600 instead of 200x600), with the scene's scale.x/y
-// divided by 6 to compensate, so the on-screen size and column count stay
-// identical but with far more real source detail per glyph before OBS's
-// (now much gentler) scale-down.
-const FONT_SIZE = 54;
-const SPACING = FONT_SIZE * 1.2; // 20% more room between symbols than the glyph size itself
+// Design size 14px (up from 9px) x 6x supersampling = 84 native px.
+// The OBS source's native width/height (1200x3600) and scene scale
+// (0.417) stay as before -- only the design font size changes here, so
+// the final on-screen glyph size grows from ~22.5px to ~35px.
+const FONT_SIZE = 84;
+const SPACING = FONT_SIZE * 1.6; // more breathing room between columns
 const TRAIL_LENGTH = 16;
 let columns = 0;
 let drops = [];
+let trails = []; // trails[i][0] = column i's current head char, [1] = one step behind, etc.
+                  // -- stable once drawn, so a trail position keeps showing the SAME
+                  // glyph as it fades instead of a new random one overlapping it every
+                  // frame (that double-exposure look is what made large glyphs look
+                  // garbled/crossed-out).
 
 function setupDrops(){
   columns = Math.ceil(window.innerWidth / SPACING);
   drops = new Array(columns).fill(0).map(() => Math.floor(Math.random() * -40));
+  trails = new Array(columns).fill(0).map(() => []);
 }
 setupDrops();
 window.addEventListener('resize', setupDrops);
@@ -61,22 +66,23 @@ function draw(){
     const x = i * SPACING;
     const headY = drops[i] * SPACING;
 
-    // draw a full decaying tail every frame instead of relying solely on
-    // the overlay fade -- keeps each column densely lit at all times.
-    for (let t = 0; t < TRAIL_LENGTH; t++){
+    trails[i].unshift(CHARS[Math.floor(Math.random() * CHARS.length)]);
+    if (trails[i].length > TRAIL_LENGTH) trails[i].length = TRAIL_LENGTH;
+
+    for (let t = 0; t < trails[i].length; t++){
       const y = headY - t * SPACING;
       if (y < 0) continue;
-      const char = CHARS[Math.floor(Math.random() * CHARS.length)];
       if (t === 0){
         ctx.fillStyle = '#B9FFB9';
       } else {
         ctx.fillStyle = 'rgba(0,255,70,' + Math.max(0, 1 - t / TRAIL_LENGTH) + ')';
       }
-      ctx.fillText(char, x, y);
+      ctx.fillText(trails[i][t], x, y);
     }
 
     if (headY > window.innerHeight + TRAIL_LENGTH * SPACING && Math.random() > 0.95){
       drops[i] = 0;
+      trails[i] = [];
     }
     drops[i]++;
   }
